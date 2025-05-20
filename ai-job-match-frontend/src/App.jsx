@@ -1,13 +1,23 @@
-import './App.css'
+//import './App.css'
+
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+
 
 function App() {
- 
 
-  return (
-    <>
-      <h1 className='text-3xl font-bold underline'>Hello From React App</h1>
-    </>
-  )
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  
 }
 
 export default App
