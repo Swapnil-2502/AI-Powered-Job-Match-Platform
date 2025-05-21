@@ -16,7 +16,7 @@ export default function LoginPage() {
       const res = await axios.post('http://localhost:3001/api/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       alert('Login successful');
-      navigate('/home'); // Placeholder, or dashboard route
+      navigate('/home'); 
     } catch (err) {
       alert(err.response?.data?.message || 'Login failed');
     }

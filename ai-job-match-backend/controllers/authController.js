@@ -19,7 +19,7 @@ exports.signup = async (req, res) => {
             password: hashedPassword
         })
 
-        const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+        const token = jwt.sign({ id: newUser._id, name: newUser.name, email: newUser.email }, process.env.JWT_SECRET, {
             expiresIn: '7d'
         });
         console.log(newUser)
@@ -51,7 +51,7 @@ exports.login = async (req,res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: 'Incorrect Password' });
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+        const token = jwt.sign({ id: user._id, name: user.name, email: user.email }, process.env.JWT_SECRET, {
         expiresIn: '7d'
         });
 
