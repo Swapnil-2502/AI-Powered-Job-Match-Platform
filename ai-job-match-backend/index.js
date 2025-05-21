@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const {ConnectMongoDB} = require("./connection")
 const authRoute = require('./routes/auth')
+const profileRoute = require('./routes/profile')
 
 require('dotenv').config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 const PORT = process.env.PORT;
 
 app.use('/api/auth', authRoute);
+app.use('/api/profile', profileRoute)
 
 app.get('/',(req,res)=>{
     res.send("Hello from home")
