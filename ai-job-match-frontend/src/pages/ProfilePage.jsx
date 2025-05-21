@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import ProfileCard from '../components/ProfileCard'
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useState } from 'react';
@@ -38,25 +39,16 @@ const ProfilePage = () => {
             alert('Failed to save profile');
         }
     }
-
-    // const handleSkillToggle = (skill) => {
-    //     const newSkills = form.skills.includes(skill)
-    //         ? form.skills.filter((s) => s !== skill)
-    //         : [...form.skills, skill];
-    //         setForm({ ...form, skills: newSkills });
-    // };
-    
-    //const skillsList = ['JavaScript', 'Python', 'React', 'Node.js', 'SQL', 'MongoDB'];
   return (
     <div>
         <Navbar/>
         <div className="min-h-screen p-6 bg-gray-100">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold">This is from Profile page</h1>
+            <h3 className='font-bold'>Your Current Profile:</h3>
           </div>
+          <ProfileCard />
           <h2 className='font-bold'>Creating/Updating Profile of {decoded?.name || 'User'}</h2>
         
-
         <div>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Name" className="w-full border p-2 rounded" />

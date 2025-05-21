@@ -6,6 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import ProfilePage from "./pages/ProfilePage";
+import JobListings from "./pages/JobListings";
 
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
           <Route path="/profile" element={
             <ProtectedRoutes>
               <ProfilePage />
+            </ProtectedRoutes>
+            } />
+          <Route path="/jobs" element={
+            <ProtectedRoutes>
+              <JobListings />
             </ProtectedRoutes>
             } />
         </Routes>
