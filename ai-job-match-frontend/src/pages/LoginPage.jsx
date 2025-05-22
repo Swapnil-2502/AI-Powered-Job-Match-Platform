@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -47,6 +47,7 @@ export default function LoginPage() {
         <button type="submit" className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">
           Login
         </button>
+        <p>Don't have an account ? <Link className='text-blue-600' to="/signup">Signup</Link> </p>
       </form>
     </div>
   );

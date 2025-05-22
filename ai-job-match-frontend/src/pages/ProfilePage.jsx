@@ -5,6 +5,8 @@ import { jwtDecode } from 'jwt-decode';
 import { useState } from 'react';
 
 const ProfilePage = () => {
+    const [refresh, setRefresh] = useState('true');
+
     const token = localStorage.getItem('token')
     const decoded = token ? jwtDecode(token): null;
 
@@ -46,7 +48,7 @@ const ProfilePage = () => {
           <div className="flex justify-between items-center mb-6">
             <h3 className='font-bold'>Your Current Profile:</h3>
           </div>
-          <ProfileCard />
+          <ProfileCard refresh={refresh} />
           <h2 className='font-bold'>Creating/Updating Profile of {decoded?.name || 'User'}</h2>
         
         <div>
@@ -123,7 +125,7 @@ const ProfilePage = () => {
                     </select>
                 </div>
 
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                <button onClick={()=>setRefresh(prev => !prev)} type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
             </form>
         </div>
         </div>

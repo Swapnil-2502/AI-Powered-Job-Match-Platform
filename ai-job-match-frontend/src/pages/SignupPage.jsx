@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 
 
 const SignupPage = () => {
@@ -53,9 +53,10 @@ const SignupPage = () => {
                 onChange={handleChange}
                 required
                 />
-                <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+                <button type="submit" className="w-full bg-amber-400 text-white p-2 rounded hover:bg-amber-500">
                 Sign Up
                 </button>
+                <p>Already have an account! <Link to='/login' className="text-blue-600">Login</Link> </p>
             </form>
         </div>
     )

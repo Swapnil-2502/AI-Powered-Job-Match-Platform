@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const ProfileCard = () => {
+const ProfileCard = ({refresh}) => {
     const token = localStorage.getItem('token')
 
     const [profile, setProfile] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+   
     const fetchProfile = async () => {
       try{
         const res = await axios.get("http://localhost:3001/api/profile", {
@@ -24,10 +24,10 @@ const ProfileCard = () => {
         setLoading(false)
       }
     }
-    if (token) {
-      fetchProfile();
-    }
-  },[token])
+    
+    useEffect(()=>{
+      fetchProfile()
+    },[refresh])
   
     return (
         <>
