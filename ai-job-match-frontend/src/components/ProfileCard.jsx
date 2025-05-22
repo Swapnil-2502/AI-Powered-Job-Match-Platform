@@ -35,7 +35,7 @@ const ProfileCard = () => {
             {loading ? (
               <p>Loading Profile... </p>
             ): profile ? (
-              <div className="bg-white p-4 rounded shadow-md">
+              <div className="bg-gray-300 p-4 rounded shadow-md">
                 <h2 className="text-xl font-semibold mb-2">Your Profile:</h2>
                 <p><strong>Name:</strong> {profile.name}</p>
                 <p><strong>Location:</strong> {profile.location}</p>
