@@ -11,7 +11,12 @@ require('dotenv').config();
 
 ConnectMongoDB(process.env.MONGODB_URL)
 
-app.use(cors());
+// app.use(cors({}));
+app.use(cors({
+  origin: 'http://43.204.235.128:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 const PORT = process.env.PORT;
