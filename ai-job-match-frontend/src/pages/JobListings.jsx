@@ -9,7 +9,7 @@ const JobListings = () => {
     useEffect(()=>{
         const fetchJobs = async () => {
             try{
-                const jobs = await axios("http://localhost:3001/api/jobs")
+                const jobs = await axios("http://43.204.235.128:3001/api/jobs")
                 setJobs(jobs.data)
             }
             catch(error){

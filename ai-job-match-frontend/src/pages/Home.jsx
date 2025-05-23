@@ -16,7 +16,7 @@ const Home = () => {
 
       try{
           const token = localStorage.getItem('token')
-          const response = await axios.post("http://localhost:3001/api/ai/recommend",{},
+          const response = await axios.post("http://43.204.235.128:3001/api/ai/recommend",{},
             {
               headers:{
                 Authorization : `Bearer ${token}`

@@ -28,7 +28,7 @@ const ProfilePage = () => {
 
         try{
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:3001/api/profile', form, {
+            await axios.post('http://43.204.235.128:3001/api/profile', form, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

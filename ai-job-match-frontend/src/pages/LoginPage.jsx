@@ -13,7 +13,7 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/api/auth/login', formData);
+      const res = await axios.post('http://43.204.235.128:3001/api/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       alert('Login successful');
       navigate('/home'); 
