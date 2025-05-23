@@ -27,7 +27,7 @@ router.get('/',authMiddleware, async (req,res)=>{
         res.json(profile);
     }
     catch(error){
-        res.status(500).json({ message: 'Error fetching profile', error: err.message });
+        res.status(500).json({ message: 'Error fetching profile', error: error.message });
     }
 })
 
