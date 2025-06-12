@@ -12,6 +12,7 @@ import JobListings from "./pages/JobListings";
 function App() {
 
     return (
+      <>
       <BrowserRouter>
         <Routes>
           <Route path="/signup" element={<SignupPage />} />
@@ -33,6 +34,7 @@ function App() {
             } />
         </Routes>
       </BrowserRouter>
+      </>
     );
   
 }

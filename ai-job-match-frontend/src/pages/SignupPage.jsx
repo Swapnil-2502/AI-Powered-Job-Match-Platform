@@ -23,7 +23,10 @@ const SignupPage = () => {
   };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+            <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">
+               AI-Powered Job Match Platform
+            </h1>
             <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-md w-80 space-y-4">
                 <h2 className="text-2xl font-semibold text-center">Sign Up</h2>
                 <input
