@@ -2,7 +2,7 @@ import { jwtDecode } from 'jwt-decode';
 import Navbar from '../components/Navbar';
 import ProfileCard from '../components/ProfileCard';
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios';
 
 const Home = () => {
   const token = localStorage.getItem('token')
@@ -16,7 +16,7 @@ const Home = () => {
 
       try{
           const token = localStorage.getItem('token')
-          const response = await axios.post("http://43.204.235.128:3001/api/ai/recommend",{},
+          const response = await axios.post("/ai/recommend",{},
             {
               headers:{
                 Authorization : `Bearer ${token}`

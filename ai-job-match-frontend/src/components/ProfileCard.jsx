@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../api/axios';
 import { useEffect, useState } from 'react';
 
 const ProfileCard = ({refresh}) => {
@@ -10,7 +10,7 @@ const ProfileCard = ({refresh}) => {
    
     const fetchProfile = async () => {
       try{
-        const res = await axios.get("http://43.204.235.128:3001/api/profile", {
+        const res = await axios.get("/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

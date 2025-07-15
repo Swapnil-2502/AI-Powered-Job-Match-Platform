@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import ProfileCard from '../components/ProfileCard'
-import axios from 'axios';
+import axios from '../api/axios';
 import { jwtDecode } from 'jwt-decode';
 import { useState } from 'react';
 
@@ -28,7 +28,7 @@ const ProfilePage = () => {
 
         try{
             const token = localStorage.getItem('token');
-            await axios.post('http://43.204.235.128:3001/api/profile', form, {
+            await axios.post('/profile', form, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

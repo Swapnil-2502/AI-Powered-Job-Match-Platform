@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios';
 import {Link, useNavigate } from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ const SignupPage = () => {
     const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://43.204.235.128:3001/api/auth/signup', formData);
+      const res = await axios.post('/auth/signup', formData);
       localStorage.setItem('token', res.data.token);
       navigate('/home'); 
     } catch (err) {

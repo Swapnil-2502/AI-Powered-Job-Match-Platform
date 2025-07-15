@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
@@ -13,7 +13,7 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://43.204.235.128:3001/api/auth/login', formData);
+      const res = await axios.post('/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       alert('Login successful');
       navigate('/home'); 

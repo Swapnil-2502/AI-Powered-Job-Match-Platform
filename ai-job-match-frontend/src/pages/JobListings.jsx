@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../api/axios";
 import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar";
 
@@ -9,7 +9,7 @@ const JobListings = () => {
     useEffect(()=>{
         const fetchJobs = async () => {
             try{
-                const jobs = await axios("http://43.204.235.128:3001/api/jobs")
+                const jobs = await axios("/jobs")
                 setJobs(jobs.data)
             }
             catch(error){
