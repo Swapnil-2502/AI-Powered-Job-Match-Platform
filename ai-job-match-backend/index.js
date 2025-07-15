@@ -12,7 +12,7 @@ require('dotenv').config();
 ConnectMongoDB(process.env.MONGODB_URL)
 
 app.use(cors({
-  origin: ['http://43.204.235.128:3000', 'http://localhost:5173'],
+  origin: ['http://localhost:5173','https://ai-powered-job-match-platform-drab.vercel.app','http://3.110.50.47:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
