@@ -44,11 +44,11 @@ A full-stack web application that helps users discover jobs tailored to their sk
 
 ### ✅ Backend
 - Deployed to AWS EC2 (Ubuntu)
-- Hosted at: `http://43.204.235.128:3001`
+- Hosted at: `http://13.127.1.91:3001`
 
 ### ✅ Frontend
 - Deployed to AWS EC2 (Ubuntu)
-- Hosted at: `http://43.204.235.128:3000/signup`
+- Hosted at: `http://13.127.1.91:3000/signup` `http://13.127.1.91:3000/login`
 
 ---
 
